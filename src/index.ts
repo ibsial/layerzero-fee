@@ -44,6 +44,7 @@ export let proxies: string[] = []
         await appendToFile('./results.csv', a)
     }
     workInProgress.stop()
+    await defaultSleep(3)
     console.log('data stored into *results.csv* file')
     console.log(c.yellow(`total expenses: $${expenses.toFixed(3)}`))
     return
