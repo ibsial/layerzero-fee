@@ -7,6 +7,9 @@ export let proxies: string[] = []
     workInProgress.run()
     let addresses = await importData()
     proxies = await importData('./proxies.txt')
+    if (proxies[0] == 'login:pass@ip:port') {
+        proxies = []
+    }
     for (let chain in chainData) {
         await getCurrencyPrice(chainData[chain].currency, proxies)
     }
