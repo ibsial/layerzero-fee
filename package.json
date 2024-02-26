@@ -1,0 +1,20 @@
+{
+    "author": "github: ibsial | telegram: @findmeonchain",
+    "scripts": {
+        "start": "npx ts-node ./src/index.ts",
+        "postinstall": "npx ts-node ./postinstall.ts"
+    },
+    "dependencies": {
+        "@types/cli-progress": "^3.11.5",
+        "axios": "^1.6.1",
+        "chalk": "^4.1.2",
+        "cli-progress": "^3.12.0",
+        "csv-writer": "^1.6.0",
+        "ethers": "^6.8.1",
+        "https-proxy-agent": "^7.0.2",
+        "inquirer": "^9.2.12",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3",
+        "@types/node": "^20.11.16"
+    }
+}
