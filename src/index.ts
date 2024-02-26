@@ -4,7 +4,7 @@ import {appendToFile, defaultSleep, importData, workInProgress, writeToFile} fro
 
 export let proxies: string[] = []
 ;(async function main() {
-    // workInProgress.run()
+    workInProgress.run()
     let addresses = await importData()
     proxies = await importData('./proxies.txt')
     for (let chain in chainData) {
@@ -38,7 +38,7 @@ export let proxies: string[] = []
     for (let a of pastas) {
         await appendToFile('./results.csv', a)
     }
-    // workInProgress.stop()
+    workInProgress.stop()
     console.log('data stored into *results.csv* file')
     return
 })()
