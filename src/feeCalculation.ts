@@ -123,7 +123,6 @@ async function getTxFee(hash: {srcChainId: number; srcTxHash: string}, proxies: 
         srcFee = parseFloat(srcFee.toFixed(4))
     }
     // console.log(chainData[idToName[hash.srcChainId]].explorer + '/transaction/' + hash.srcTxHash)
-    console.log(idToName[hash.srcChainId], srcFee)
     return {chainId: hash.srcChainId, fee: srcFee}
 }
 async function getFees(index: number, address: string, proxies: string[]) {
