@@ -1,6 +1,6 @@
 import {chainData} from './constants'
 import {getCurrencyPrice, getFees} from './feeCalculation'
-import {appendToFile, defaultSleep, importData, workInProgress, writeToFile} from './helpers'
+import {appendToFile, c, defaultSleep, importData, workInProgress, writeToFile} from './helpers'
 
 export let proxies: string[] = []
 ;(async function main() {
@@ -26,6 +26,7 @@ export let proxies: string[] = []
     }
     header += 'TOTAL'
     await writeToFile('./results.csv', header)
+    let expenses = 0
     const getPasta = (res: {index: number; address: string} & {[key: string]: number}) => {
         let pasta = `${res.index + 1};${res.address};`
         let total = 0
@@ -34,6 +35,7 @@ export let proxies: string[] = []
             pasta += res[key] == undefined ? '0;' : res[key].toFixed(3).replace('.', ',') + ';'
             total += res[key] ?? 0
         }
+        expenses += total
         pasta += total.toFixed(3).replace('.', ',')
         return pasta
     }
@@ -43,5 +45,6 @@ export let proxies: string[] = []
     }
     workInProgress.stop()
     console.log('data stored into *results.csv* file')
+    console.log(c.yellow(`total expenses: $${expenses.toFixed(3)}`))
     return
 })()
