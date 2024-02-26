@@ -5,7 +5,7 @@
 - fill `addresses.txt` and `proxies.txt`
 
 ## running
-`npm run`
+`npm run start`
 
 ## Donos and contact
 
